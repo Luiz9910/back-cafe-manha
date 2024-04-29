@@ -61,4 +61,5 @@ public class CafeManhaController {
     public void delete(@PathVariable Long id) {
         this.cafeManhaService.deleteCafe(id);
     }
+
 }
