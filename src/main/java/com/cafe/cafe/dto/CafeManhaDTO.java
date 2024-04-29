@@ -12,6 +12,12 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CafeManhaDTO {
+    @NotBlank(message = "O campo nome é obrigatório")
+    private String nomeColaborador;
+
+    @NotBlank(message = "O campo cpf é obrigatório")
+    private String cpfColaborador;
+
     @NotBlank(message = "O campo café é obrigatório")
     private String cafe;
 

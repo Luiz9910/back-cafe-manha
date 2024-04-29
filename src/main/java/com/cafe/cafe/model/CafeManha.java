@@ -18,8 +18,17 @@ public class CafeManha {
     private Long id;
 
     @Column(nullable = false)
+    private String nomeColaborador;
+
+    @Column(nullable = false)
+    private String cpfColaborador;
+
+    @Column(nullable = false)
     private String cafe;
 
-    @Column(name = "sale_date", nullable = false)
+    @Column(nullable = false)
     private LocalDate data;
+
+    @Column(nullable = true)
+    private Boolean entrega = false;
 }

@@ -1,6 +1,7 @@
 package com.cafe.cafe.controller;
 
 import com.cafe.cafe.exception.BadRequestException;
+import com.cafe.cafe.exception.ConflitException;
 import com.cafe.cafe.exception.NoContentException;
 import com.cafe.cafe.exception.NotfoundException;
 import com.cafe.cafe.model.ResponseDTO;
@@ -28,6 +29,13 @@ public class GlobalException {
     @ExceptionHandler(NoContentException.class)
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public ResponseDTO handleNoContentException(NoContentException ex) {
+        String messageError = ex.getMessage();
+        return new ResponseDTO(messageError);
+    }
+
+    @ExceptionHandler(ConflitException.class)
+    @ResponseStatus(HttpStatus.CONFLICT)
+    public ResponseDTO handleException(ConflitException ex) {
         String messageError = ex.getMessage();
         return new ResponseDTO(messageError);
     }
